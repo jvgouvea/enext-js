@@ -1,0 +1,160 @@
+@import "/css/reset.css";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-header{
+  background-color: rgb(209, 209, 221);
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.content-header h2 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.content-weather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.content-weather img {
+  width: 150px;
+}
+
+.content-weather p {
+  font-size: 20px;
+  margin: 4px 0;
+}
+
+.content-weather p+p{
+  font-weight: bold;
+}
+
+.weather-description{
+  text-transform: capitalize;
+}
+
+.content-date{
+  background-color: #f7f7f7;
+  padding: 14px;
+  border-radius: 4px;
+  margin-top: 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-save,.btn-att,.btn-remove {
+  background-color: rgb(79, 79, 218);
+  color: #fff;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-att{
+  background-color: rgb(79, 79, 105);
+  color: #fff;
+}
+.btn-remove{
+  background-color: rgb(179, 38, 38);
+  color: #fff;
+}
+
+.content-save {
+  margin-top: 60px;
+}
+
+.content-save h2 {
+  text-align: center;
+}
+
+.content-save-list{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.content-save .content-save-list h2 {
+  font-size: 20px;
+}
+
+.position-error {
+  color: rgb(224, 6, 6);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.save-list-empty{
+  background-color: #e7e7e7;
+  font-size: 16px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: rgb(79, 79, 218);
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media(max-width:500px){
+  .header h1{
+    font-size: 28px;
+  }
+  .content-weather {
+    flex-direction: column;
+    gap: 0;
+  }
+}
