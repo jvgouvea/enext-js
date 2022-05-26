@@ -90,7 +90,7 @@ if ("geolocation" in navigator) {
           <div class="content-weather">
             <img src="https://openweathermap.org/img/wn/${item.icon}@2x.png" alt="icon condições climáticas" width="150" height="150"/>
             <div>
-              <p>${item.weatherDescription}</p>
+              <p class="weather-description">${item.weatherDescription}</p>
               <p>${item.temp} °C</p>
             </div>
           </div>
