@@ -16,7 +16,7 @@ if ("geolocation" in navigator) {
   function getCoords() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        getWeather(position.coords.latitude, position.coords.longitude);
+        getApi(position.coords.latitude, position.coords.longitude);
       },
       (error) => {
         contentDiv.style.backgroundColor = "#e7e7e7";
@@ -29,18 +29,22 @@ if ("geolocation" in navigator) {
   setInterval(getCoords, 60000);
   btnAtt.addEventListener("click", getCoords);
 
+  async function getApi(latitude, longitude) {
+    const api = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=pt_br&appid=f514382f1aaaffe10f74bdcca8f2ebb9`
+    );
+    const apiJson = await api.json();
+    weatherInfo(apiJson);
+  }
+
   function convertTemp(kelvin) {
     const celsius = Math.round((273 - kelvin) * -1);
     return celsius;
   }
 
-  async function getWeather(latitude, longitude) {
-    const api = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=pt_br&appid=f514382f1aaaffe10f74bdcca8f2ebb9`
-    );
-    const apiJson = await api.json();
+  function weatherInfo(apiJson) {
     const date = new Date();
-
+    
     const dateObject = {
       day: date.toLocaleString("pt-BR", {
         weekday: "long",
@@ -80,7 +84,7 @@ if ("geolocation" in navigator) {
     </div>`;
   }
 
-  function uptadeSaveListHTML() {
+  function uptadeSaveList() {
     if (contentSaveItem.length > 0) {
       localStorage.setItem("weather", JSON.stringify(contentSaveItem));
       let result = contentSaveItem.map((item) => {
@@ -107,12 +111,12 @@ if ("geolocation" in navigator) {
   }
 
   if (contentSaveItem) {
-    uptadeSaveListHTML();
+    uptadeSaveList();
   }
 
   btnSave.addEventListener("click", () => {
     contentSaveItem.push(local);
-    uptadeSaveListHTML();
+    uptadeSaveList();
   });
 
   btnRemove.addEventListener("click", () => {
