@@ -1,10 +1,14 @@
 if ("geolocation" in navigator) {
   var local;
+
+  const buttons = document.querySelector(".buttons");
   const btnSave = document.querySelector(".btn-save");
   const btnAtt = document.querySelector(".btn-att");
   const btnRemove = document.querySelector(".btn-remove");
+
   const contentDiv = document.querySelector(".content-div");
   const contentSaveDiv = document.querySelector(".content-save-list");
+
   let contentSaveItem = JSON.parse(localStorage.getItem("weather"));
   if (!contentSaveItem) {
     contentSaveItem = [];
@@ -19,7 +23,8 @@ if ("geolocation" in navigator) {
         getApi(position.coords.latitude, position.coords.longitude);
       },
       (error) => {
-        contentDiv.style.backgroundColor = "#e7e7e7";
+        buttons.style.display = "none";
+        contentDiv.style.backgroundColor = "#474545ce";
         contentDiv.innerHTML =
           "<p class='position-error'>Permita o acesso a sua localização e recarregue a pagina</p>";
       }
@@ -44,7 +49,7 @@ if ("geolocation" in navigator) {
 
   function weatherInfo(apiJson) {
     const date = new Date();
-    
+
     const dateObject = {
       day: date.toLocaleString("pt-BR", {
         weekday: "long",
