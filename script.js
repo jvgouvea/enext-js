@@ -12,7 +12,7 @@ if ("geolocation" in navigator) {
   let contentSaveItem = JSON.parse(localStorage.getItem("weather"));
   if (!contentSaveItem) {
     contentSaveItem = [];
-    contentSaveDiv.innerHTML = `<p class="save-list-empty">Nenhuma informação salva</p>`;
+    contentSaveDiv.innerHTML = `<p class="save-list-empty">Nenhuma</p>`;
   }
 
   contentDiv.innerHTML = `<div class="loader"></div>`;
@@ -109,7 +109,7 @@ if ("geolocation" in navigator) {
       });
       contentSaveDiv.innerHTML = result.join("");
     } else {
-      contentSaveDiv.innerHTML = `<p class="save-list-empty">Nenhuma informação salva</p>`;
+      contentSaveDiv.innerHTML = `<p class="save-list-empty">Nenhuma</p>`;
     }
   }
 
@@ -125,7 +125,7 @@ if ("geolocation" in navigator) {
   btnRemove.addEventListener("click", () => {
     localStorage.removeItem("weather");
     contentSaveItem = [];
-    contentSaveDiv.innerHTML = `<p class="save-list-empty">Nenhuma informação salva</p>`;
+    contentSaveDiv.innerHTML = `<p class="save-list-empty">Nenhuma</p>`;
   });
 } else {
   contentDiv.style.backgroundColor = "#e7e7e7";
