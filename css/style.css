@@ -1,8 +1,13 @@
 @import "/css/reset.css";
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f7f7;
+  font-family: "Poppins", sans-serif;
+  background-color: #000000d7;
+}
+
+h1,
+h2 {
+  color: #fff;
 }
 
 .container {
@@ -25,8 +30,8 @@ body {
   align-items: center;
 }
 
-.content-header{
-  background-color: rgb(209, 209, 221);
+.content-header {
+  background-color: #0e0e469c;
   padding: 30px;
   border-radius: 4px;
 }
@@ -40,6 +45,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  color: #fff;
 }
 
 .content-weather img {
@@ -51,16 +57,17 @@ body {
   margin: 4px 0;
 }
 
-.content-weather p+p{
+.content-weather p + p {
   font-weight: bold;
 }
 
-.weather-description{
+.weather-description {
   text-transform: capitalize;
 }
 
-.content-date{
-  background-color: #f7f7f7;
+.content-date {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
   padding: 14px;
   border-radius: 4px;
   margin-top: 20px;
@@ -70,7 +77,7 @@ body {
   justify-content: space-between;
 }
 
-.buttons{
+.buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -78,8 +85,10 @@ body {
   align-items: center;
 }
 
-.btn-save,.btn-att,.btn-remove {
-  background-color: rgb(79, 79, 218);
+.btn-save,
+.btn-att,
+.btn-remove {
+  background-color: rgb(16, 102, 49);
   color: #fff;
   padding: 8px 16px;
   margin-top: 20px;
@@ -89,30 +98,59 @@ body {
   cursor: pointer;
 }
 
-.btn-att{
-  background-color: rgb(79, 79, 105);
+.btn-att {
+  background-color: rgb(61, 61, 77);
   color: #fff;
 }
-.btn-remove{
+
+.header-btn-remove{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.btn-remove {
   background-color: rgb(179, 38, 38);
   color: #fff;
 }
 
 .content-save {
+  padding: 30px;
   margin-top: 60px;
+  background-color: #2e2e2ed2;
 }
 
 .content-save h2 {
   text-align: center;
 }
 
-.content-save-list{
+.content-save-list {
   margin-top: 30px;
   margin-bottom: 30px;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  overflow-x: auto;
   gap: 30px;
+}
+
+.content-save-list::-webkit-scrollbar {
+  width: 12px;
+}
+.content-save-list::-webkit-scrollbar-thumb {
+  background-color: #696969ce;
+}
+.content-save-list::-webkit-scrollbar-track {
+  background-color: #0000003b;
+}
+
+.content-save-list .content-header {
+  background-color: #252525;
+  margin-bottom: 20px;
+  min-width: 380px;
+}
+
+.content-save-list .content-date {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .content-save .content-save-list h2 {
@@ -127,18 +165,21 @@ body {
   border-radius: 4px;
 }
 
-.save-list-empty{
-  background-color: #e7e7e7;
+.save-list-empty {
   font-size: 16px;
   padding: 20px;
   border-radius: 4px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  color: rgb(216, 213, 213);
 }
 
 .loader {
   animation: is-rotating 1s infinite;
   border: 6px solid #e5e5e5;
   border-radius: 50%;
-  border-top-color: rgb(79, 79, 218);
+  border-top-color: #1c1c74fd;
   height: 50px;
   width: 50px;
 }
@@ -149,8 +190,8 @@ body {
   }
 }
 
-@media(max-width:500px){
-  .header h1{
+@media (max-width: 500px) {
+  .header h1 {
     font-size: 28px;
   }
   .content-weather {

@@ -7,6 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Temperatura em tempo real usando dados da api de Clima da 
   openweathermap">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/style.css">
   <title>Clima</title>
@@ -21,11 +27,10 @@
     <div class="content-div">
     </div>
 
-      <div class="buttons">
-        <button class="btn-save">Salvar informações</button>
-        <button class="btn-att">Atualizar informações</button>
-        <button class="btn-remove">Excluir informações</button>
-      </div>
+    <div class="buttons">
+      <button class="btn-save">Salvar informações</button>
+      <button class="btn-att">Atualizar informações</button>
+    </div>
   </main>
 
   <section class="container content-save">
@@ -34,6 +39,10 @@
 
     </div>
   </section>
+
+  <div class="header-btn-remove">
+    <button class="btn-remove">Limpar informações salvas</button>
+  </div>
 
   <script src="./script.js"></script>
 </body>
