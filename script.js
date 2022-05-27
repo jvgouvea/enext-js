@@ -83,8 +83,7 @@ if ("geolocation" in navigator) {
         </div>
       </div>
       <div class="content-date">
-        <p>${local.date.day}</p>
-        <p>${local.date.time}</p>
+        <p>${local.date.day}  -  <span>${local.date.time}</span></p>
       </div> 
     </div>`;
   }
@@ -104,8 +103,7 @@ if ("geolocation" in navigator) {
             </div>
           </div>
           <div class="content-date">
-            <p>${item.date.day}</p>
-            <p>${item.date.time}</p>
+            <p>${item.date.day}  -  <span>${item.date.time}</span></p>
           </div> 
         </div>`;
       });
